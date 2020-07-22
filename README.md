@@ -1,5 +1,5 @@
 # Jar2AppImage
-Generic scripts and documentation to take a fat or shadow jar and make it into a linux AppImage
+Generic scripts and documentation to take a jdk11 fat or shadow jar and make it into a linux AppImage bundled with a jdk11 jre. Uses [linuxdeploy](https://github.com/linuxdeploy/linuxdeploy) and [AdoptOpenJDK 11](https://github.com/AdoptOpenJDK/openjdk11-binaries)
 
 ## Usage
 
