@@ -2,9 +2,7 @@
 
 # Your fat/shadow jar should be in the same dir as build.sh 
 # Modify these vars as desired
-export APPNAME=MyJar2AppImage
-export VERSION=1.0
-export ARCH=x86_64
+source vars.env
 
 # Setup vars and dirs
 WORKDIR=$(pwd)
@@ -20,7 +18,7 @@ cat << EOF > /$APPDIR/.desktop
 [Desktop Entry]
 Version=$VERSION
 Type=Application
-Categories=Utility;
+Categories=$CATEGORIES
 Terminal=false
 Exec=AppRun
 Name=$APPNAME

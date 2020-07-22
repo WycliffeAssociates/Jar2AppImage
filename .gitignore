@@ -2,3 +2,4 @@ AppDir/
 *.tar.gz
 *.AppImage
 config.propoerties
+*.jar
