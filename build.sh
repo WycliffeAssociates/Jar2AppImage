@@ -26,7 +26,7 @@ Icon=icon
 EOF
 
 # Download JRE, works now, could break if the jq starts returning more than one value bases on these filters
-wget -q -O - "https://api.github.com/repos/AdoptOpenJDK/openjdk11-binaries/releases" | jq -r ".[] | select(.prerelease==false) | select(.name | contains(\"openj9\") | not) | .assets[] | select(.name | contains(\"jre_x64_linux_hotspot\")) | select(.content_type==\"application/x-compressed-tar\") | .browser_download_url" | xargs wget -q -O jre.tar.gz
+wget -q -O jre.tar.gz https://api.adoptopenjdk.net/v3/binary/latest/11/ga/linux/x64/jre/hotspot/normal/adoptopenjdk
 # Download linuxdeploy
 wget -q -O - "https://api.github.com/repos/linuxdeploy/linuxdeploy/releases" | jq -r ".[] | .assets[] | select(.name==\"linuxdeploy-x86_64.AppImage\") | .browser_download_url" | xargs wget -q -O linuxdeploy.AppImage
 
