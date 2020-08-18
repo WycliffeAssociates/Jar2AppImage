@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 # Your fat/shadow jar should be in the same dir as build.sh 
 # Modify these vars as desired
 source vars.env
@@ -42,4 +44,7 @@ fi
 chmod +x ./linuxdeploy.AppImage
 
 # make the AppImage
-./linuxdeploy.AppImage --output appimage --appdir $APPDIR
+if ! ./linuxdeploy.AppImage --output appimage --appdir $APPDIR;
+    then echo "appimage creation failed";
+else echo "appimage creation successful"
+fi
